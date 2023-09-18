@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import AboutPage from "./About.js";
+import ClassPage from "./Classes.js";
 import Group40 from "./images/Group 40.png";
 import Image16 from "./images/Image-16.png";
 import Image17 from "./images/Image-17.png";
@@ -71,6 +72,11 @@ function App() {
   const navigateToAbout = () => {
     setCurrentPage("about");
   };
+
+  const navigateToClass = () => {
+    setCurrentPage("class");
+  };
+
   return (
     <div className="homepage">
       <div className="div">
@@ -81,9 +87,21 @@ function App() {
           </div>
           <div className="menu-content">
             <div className="home-about-classes">
-              <a className="header-links" style={{textDecoration: "none"}} href=".homepage">Home</a>
-              <button className="header-links" style={{cursor: "pointer"}} onClick={navigateToAbout}>About</button>
-              <button className="header-links">Classes</button>
+              <a
+                className="header-links"
+                style={{ textDecoration: "none" }}
+                href=".homepage"
+              >
+                Home
+              </a>
+              <button
+                className="header-links"
+                style={{ cursor: "pointer" }}
+                onClick={navigateToAbout}
+              >
+                About
+              </button>
+              <button onClick={navigateToClass} className="header-links">Classes</button>
               <button className="header-links">Trainers</button>
               <button className="header-links">Newss</button>
               <button className="header-links">Contact</button>
@@ -105,7 +123,9 @@ function App() {
                   </div>
                   <div className="button-10">
                     <button className="button-11">Start Today</button>
-                    <button className="button-12">About Me</button>
+                    <button onClick={navigateToAbout} className="button-12">
+                      About Me
+                    </button>
                   </div>
                 </div>
               </div>
@@ -119,7 +139,7 @@ function App() {
                         </div>
                         <div className="text-wrapper-55">Upcoming Classes</div>
                       </div>
-                      <button className="button-8">
+                      <button onClick={navigateToClass} className="button-8">
                         <div className="text-wrapper-23">More Class</div>
                       </button>
                     </div>
@@ -954,7 +974,11 @@ function App() {
           )}
 
           {currentPage === "about" && (
-            <AboutPage /> // Render the AboutPage component
+            <AboutPage />
+          )}
+
+          {currentPage === "class" && (
+            <ClassPage />
           )}
         </main>
       </div>
