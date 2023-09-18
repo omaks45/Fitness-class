@@ -1,4 +1,6 @@
 import "./App.css";
+import React, { useState } from "react";
+import AboutPage from "./About.js";
 import Group40 from "./images/Group 40.png";
 import Image16 from "./images/Image-16.png";
 import Image17 from "./images/Image-17.png";
@@ -64,6 +66,11 @@ const data = [
 // ratings
 
 function App() {
+  const [currentPage, setCurrentPage] = useState("home");
+
+  const navigateToAbout = () => {
+    setCurrentPage("about");
+  };
   return (
     <div className="homepage">
       <div className="div">
@@ -74,248 +81,281 @@ function App() {
           </div>
           <div className="menu-content">
             <div className="home-about-classes">
-              <a href=".homepage">Home</a>
-              <a>About</a>
-              <a>Classes</a>
-              <a>Trainers</a>
-              <a>Newss</a>
-              <a>Contact</a>
+              <a className="header-links" style={{textDecoration: "none"}} href=".homepage">Home</a>
+              <button className="header-links" style={{cursor: "pointer"}} onClick={navigateToAbout}>About</button>
+              <button className="header-links">Classes</button>
+              <button className="header-links">Trainers</button>
+              <button className="header-links">Newss</button>
+              <button className="header-links">Contact</button>
               <button className="button-13">Book Class</button>
             </div>
           </div>
         </header>
-        <div className="banner">
-          <div className="display-text">
-            <div className="title-7">
-              <p className="keep-your-body-fit">
-                Keep Your Body
-                <br />
-                Fit &amp; Strong
-              </p>
-            </div>
-            <div className="button-10">
-              <button className="button-11">Start Today</button>
-              <button className="button-12">About Me</button>
-            </div>
-          </div>
-        </div>
-        <div className="classes">
-          <div className="overlap-8">
-            <div className="content-27">
-              <div className="content-28">
-                <div className="title-6">
-                  <div className="text-wrapper-15">OUR FITNESS TRAINING</div>
-                  <div className="text-wrapper-55">Upcoming Classes</div>
-                </div>
-                <button className="button-8">
-                  <div className="text-wrapper-23">More Class</div>
-                </button>
-              </div>
-              <div className="classes-2">
-                <div className="element-17">
-                  <img width="347px" height="400px" alt="Image" src={Image16} />
-                  <div className="text-4">
-                    <div className="text-wrapper-56">Pilates Training</div>
-                    <p className="containing-lorem">
-                      Containing Lorem Ipsum Passagesand More Recently With
+        <main>
+          {currentPage === "home" && (
+            <div>
+              <div className="banner">
+                <div className="display-text">
+                  <div className="title-7">
+                    <p className="keep-your-body-fit">
+                      Keep Your Body
+                      <br />
+                      Fit &amp; Strong
                     </p>
-                    <button className="button-9">Read More</button>
                   </div>
-                </div>
-                <div className="element-17">
-                  <img width="347px" height="400px" alt="Image" src={Image17} />
-                  <div className="text-4">
-                    <div className="text-wrapper-56">Aerobic Training</div>
-                    <p className="containing-lorem">
-                      Containing Lorem Ipsum Passagesand More Recently With
-                    </p>
-                    <button className="button-9">Read More</button>
-                  </div>
-                </div>
-                <div className="element-17">
-                  <img width="347px" height="400px" alt="Image" src={Image18} />
-                  <div className="text-4">
-                    <div className="text-wrapper-56">CrossFit Workout</div>
-                    <p className="containing-lorem">
-                      Containing Lorem Ipsum Passagesand More Recently With
-                    </p>
-                    <button className="button-9">Read More</button>
+                  <div className="button-10">
+                    <button className="button-11">Start Today</button>
+                    <button className="button-12">About Me</button>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+              <div className="classes">
+                <div className="overlap-8">
+                  <div className="content-27">
+                    <div className="content-28">
+                      <div className="title-6">
+                        <div className="text-wrapper-15">
+                          OUR FITNESS TRAINING
+                        </div>
+                        <div className="text-wrapper-55">Upcoming Classes</div>
+                      </div>
+                      <button className="button-8">
+                        <div className="text-wrapper-23">More Class</div>
+                      </button>
+                    </div>
+                    <div className="classes-2">
+                      <div className="element-17">
+                        <img
+                          width="347px"
+                          height="400px"
+                          alt="Image"
+                          src={Image16}
+                        />
+                        <div className="text-4">
+                          <div className="text-wrapper-56">
+                            Pilates Training
+                          </div>
+                          <p className="containing-lorem">
+                            Containing Lorem Ipsum Passagesand More Recently
+                            With
+                          </p>
+                          <button className="button-9">Read More</button>
+                        </div>
+                      </div>
+                      <div className="element-17">
+                        <img
+                          width="347px"
+                          height="400px"
+                          alt="Image"
+                          src={Image17}
+                        />
+                        <div className="text-4">
+                          <div className="text-wrapper-56">
+                            Aerobic Training
+                          </div>
+                          <p className="containing-lorem">
+                            Containing Lorem Ipsum Passagesand More Recently
+                            With
+                          </p>
+                          <button className="button-9">Read More</button>
+                        </div>
+                      </div>
+                      <div className="element-17">
+                        <img
+                          width="347px"
+                          height="400px"
+                          alt="Image"
+                          src={Image18}
+                        />
+                        <div className="text-4">
+                          <div className="text-wrapper-56">
+                            CrossFit Workout
+                          </div>
+                          <p className="containing-lorem">
+                            Containing Lorem Ipsum Passagesand More Recently
+                            With
+                          </p>
+                          <button className="button-9">Read More</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-        <div className="text-3">
-          <div className="FOCUS-ON-YOUR-wrapper">
-            <p className="FOCUS-ON-YOUR">
-              <p style={{ color: "white" }} className="moving">
-                FOCUS ON YOUR&nbsp;&nbsp;{" "}
-                <strong style={{ color: "#A1F65E" }}>FITNESS</strong>{" "}
-                NOT&nbsp;&nbsp;YOUR LOSS
-              </p>
-            </p>
-          </div>
-        </div>
-        <div className="about">
-          <div className="overlap-7">
-            <img className="heading-3" alt="Heading" src={Image2} />
-            <div className="content-21">
-              <div className="content-22">
-                <div className="content-23">
-                  <div className="title-5">
-                    <div className="text-wrapper-15">ABOUT</div>
-                    <p className="respect-your-body-it">
-                      Respect Your Body, <br />
-                      It’s the Only One You Get
+              <div className="text-3">
+                <div className="FOCUS-ON-YOUR-wrapper">
+                  <p className="FOCUS-ON-YOUR">
+                    <p style={{ color: "white" }} className="moving">
+                      FOCUS ON YOUR&nbsp;&nbsp;{" "}
+                      <strong style={{ color: "#A1F65E" }}>FITNESS</strong>{" "}
+                      NOT&nbsp;&nbsp;YOUR LOSS
                     </p>
-                  </div>
-                  <p className="it-is-a-long-3">
-                    It Is A Long Established Fact That A Reader Will Be
-                    Distracted <br />
-                    by The Readable Content Of A Page When Looking At Its
-                    Layout.
-                    <br />
-                    point Of Using Lorem Ipsum Is
                   </p>
                 </div>
-                <div className="sub-content-5">
-                  <div className="element-16">
-                    <div className="content-24">
-                      <div className="content-25">
-                        <div className="text-wrapper-12">Motivation</div>
-                        <p className="text-wrapper-54">
+              </div>
+              <div className="about">
+                <div className="overlap-7">
+                  <img className="heading-3" alt="Heading" src={Image2} />
+                  <div className="content-21">
+                    <div className="content-22">
+                      <div className="content-23">
+                        <div className="title-5">
+                          <div className="text-wrapper-15">ABOUT</div>
+                          <p className="respect-your-body-it">
+                            Respect Your Body, <br />
+                            It’s the Only One You Get
+                          </p>
+                        </div>
+                        <p className="it-is-a-long-3">
                           It Is A Long Established Fact That A Reader Will Be
-                          Distracted
+                          Distracted <br />
+                          by The Readable Content Of A Page When Looking At Its
+                          Layout.
+                          <br />
+                          point Of Using Lorem Ipsum Is
                         </p>
                       </div>
-                      <img className="image-9" alt="Image" src={Image3} />
+                      <div className="sub-content-5">
+                        <div className="element-16">
+                          <div className="content-24">
+                            <div className="content-25">
+                              <div className="text-wrapper-12">Motivation</div>
+                              <p className="text-wrapper-54">
+                                It Is A Long Established Fact That A Reader Will
+                                Be Distracted
+                              </p>
+                            </div>
+                            <img className="image-9" alt="Image" src={Image3} />
+                          </div>
+                        </div>
+                        <div className="element-16">
+                          <div className="content-26">
+                            <img
+                              className="image-10"
+                              alt="Image"
+                              src={Image4}
+                            />
+                            <div className="content-25">
+                              <div className="text-wrapper-12">Inspire</div>
+                              <p className="text-wrapper-54">
+                                Will Be Distracted By Readable Content Using
+                                Lorem Ipsum
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="button-wrapper">
+                      <button className="button-7">
+                        <div className="text-wrapper-5">Get Started</div>
+                      </button>
                     </div>
                   </div>
-                  <div className="element-16">
-                    <div className="content-26">
-                      <img className="image-10" alt="Image" src={Image4} />
-                      <div className="content-25">
-                        <div className="text-wrapper-12">Inspire</div>
-                        <p className="text-wrapper-54">
-                          Will Be Distracted By Readable Content Using Lorem
-                          Ipsum
-                        </p>
+                </div>
+                <div className="typs">
+                  {/* <img width="347px" height="400px" alt="Image" src={Image16} /> */}
+                  <div className="content-19">
+                    <div className="element-13">
+                      <div className="content-20">
+                        <div className="element-14">
+                          <div className="overlap-group-6">
+                            <div className="text-wrapper-50">01</div>
+                          </div>
+                        </div>
+                        <div className="text-wrapper-51">Fitnes Taining</div>
+                      </div>
+                    </div>
+                    <div className="element-13">
+                      <div className="content-20">
+                        <div className="element-14">
+                          <div className="overlap-group-6">
+                            <div className="text-wrapper-52">02</div>
+                          </div>
+                        </div>
+                        <div className="text-wrapper-51">Regular Routine</div>
+                      </div>
+                    </div>
+                    <div className="element-13">
+                      <div className="content-20">
+                        <div className="element-14">
+                          <div className="overlap-group-6">
+                            <div className="text-wrapper-52">03</div>
+                          </div>
+                        </div>
+                        <div className="text-wrapper-51">Deit Maintenance</div>
+                      </div>
+                    </div>
+                    <div className="element-15">
+                      <img
+                        className="google-logo-png"
+                        alt="Google logo png"
+                        src={GoogleIcon}
+                      />
+                      <div className="rating-4">
+                        <div className="text-wrapper-53">Review on Google</div>
+                        <img className="star-3" alt="Star" src={StarIcons} />
                       </div>
                     </div>
                   </div>
+                  {/* <img className="line-14" alt="Line" src={Water} /> */}
                 </div>
               </div>
-              <div className="button-wrapper">
-                <button className="button-7">
-                  <div className="text-wrapper-5">Get Started</div>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="typs">
-            {/* <img width="347px" height="400px" alt="Image" src={Image16} /> */}
-            <div className="content-19">
-              <div className="element-13">
-                <div className="content-20">
-                  <div className="element-14">
-                    <div className="overlap-group-6">
-                      <div className="text-wrapper-50">01</div>
+              <div className="time-table">
+                <div className="time-table-2">
+                  <div className="heading-2">
+                    <div
+                      className="time-table-3"
+                      style={{
+                        color: "#a1f65e",
+                        fontFamily: 'Inter-SemiBold", Helvetica',
+                        fontSize: "20px",
+                        fontWeight: "600",
+                        letterSpacing: "8px",
+                      }}
+                    >
+                      TIME TABLE
                     </div>
+                    <div className="text-wrapper-28">Working Schedule</div>
                   </div>
-                  <div className="text-wrapper-51">Fitnes Taining</div>
-                </div>
-              </div>
-              <div className="element-13">
-                <div className="content-20">
-                  <div className="element-14">
-                    <div className="overlap-group-6">
-                      <div className="text-wrapper-52">02</div>
+                  <div className="table">
+                    <div className="date-2">
+                      <div className="text-wrapper-48">Sunday</div>
+                      <div className="text-wrapper-49">Monday</div>
+                      <div className="text-wrapper-48">Tuesday</div>
+                      <div className="text-wrapper-48">Wednesday</div>
+                      <div className="text-wrapper-48">Thursday</div>
+                      <div className="text-wrapper-48">Friday</div>
+                      <div className="text-wrapper-48">Saturday</div>
                     </div>
-                  </div>
-                  <div className="text-wrapper-51">Regular Routine</div>
-                </div>
-              </div>
-              <div className="element-13">
-                <div className="content-20">
-                  <div className="element-14">
-                    <div className="overlap-group-6">
-                      <div className="text-wrapper-52">03</div>
-                    </div>
-                  </div>
-                  <div className="text-wrapper-51">Deit Maintenance</div>
-                </div>
-              </div>
-              <div className="element-15">
-                <img
-                  className="google-logo-png"
-                  alt="Google logo png"
-                  src={GoogleIcon}
-                />
-                <div className="rating-4">
-                  <div className="text-wrapper-53">Review on Google</div>
-                  <img className="star-3" alt="Star" src={StarIcons} />
-                </div>
-              </div>
-            </div>
-            {/* <img className="line-14" alt="Line" src={Water} /> */}
-          </div>
-        </div>
-        <div className="time-table">
-          <div className="time-table-2">
-            <div className="heading-2">
-              <div
-                className="time-table-3"
-                style={{
-                  color: "#a1f65e",
-                  fontFamily: 'Inter-SemiBold", Helvetica',
-                  fontSize: "20px",
-                  fontWeight: "600",
-                  letterSpacing: "8px",
-                }}
-              >
-                TIME TABLE
-              </div>
-              <div className="text-wrapper-28">Working Schedule</div>
-            </div>
-            <div className="table">
-              <div className="date-2">
-                <div className="text-wrapper-48">Sunday</div>
-                <div className="text-wrapper-49">Monday</div>
-                <div className="text-wrapper-48">Tuesday</div>
-                <div className="text-wrapper-48">Wednesday</div>
-                <div className="text-wrapper-48">Thursday</div>
-                <div className="text-wrapper-48">Friday</div>
-                <div className="text-wrapper-48">Saturday</div>
-              </div>
 
-              <div className="table-content">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Time</th>
-                      <th>Type</th>
-                      <th>Workout</th>
-                      <th>Trainer</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data.map((value, key) => {
-                      return (
-                        <tr key={key}>
-                          <td>{value.time}</td>
-                          <td>{value.type}</td>
-                          <td>{value.workout}</td>
-                          <td>{value.trainer}</td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              </div>
+                    <div className="table-content">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Time</th>
+                            <th>Type</th>
+                            <th>Workout</th>
+                            <th>Trainer</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {data.map((value, key) => {
+                            return (
+                              <tr key={key}>
+                                <td>{value.time}</td>
+                                <td>{value.type}</td>
+                                <td>{value.workout}</td>
+                                <td>{value.trainer}</td>
+                              </tr>
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                    </div>
 
-              {/* <div className="table-2">
+                    {/* <div className="table-2">
                 <div className="overlap-group-5">
                   <div className="table-content">
                     <div className="shedule">
@@ -439,454 +479,484 @@ function App() {
                   </div>
                 </div>
               </div> */}
-            </div>
-          </div>
-        </div>
-        <div className="testimonial">
-          <div className="overlap-5">
-            <div className="content-15">
-              <div className="content-16">
-                <h1 className="rev">Reviews</h1>
-                <Slideshow />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="team">
-          <div className="title-3">
-            <div className="text-wrapper-15">OUR TRAINERS</div>
-            <p className="text-wrapper-16">We Trained You to Gain</p>
-          </div>
-          <div className="members">
-            <div className="each-member">
-              <img width="300px" height="350vh" src={Photo} />
-              <div className="about-member">
-                <h1
-                  style={{
-                    color: "red",
-                    paddingBottom: "5px",
-                    borderBottom: "1px solid white",
-                  }}
-                >
-                  Amanda
-                </h1>
-                <span>
-                  <p>Specialisations :</p>
-                  <p>Crossfit Expoort, Nutrition & Rehab</p>
-                </span>
-                <div>
-                  <a className="socialmedia">
-                    <Facebook />
-                  </a>
-                  <a className="socialmedia">
-                    {" "}
-                    <Instagram />
-                  </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="each-member">
-              <img width="300px" height="350vh" src={Photo1} />
-              <div className="about-member">
-                <h1
-                  style={{
-                    color: "red",
-                    paddingBottom: "5px",
-                    borderBottom: "1px solid white",
-                  }}
-                >
-                  Amanda
-                </h1>
-                <span>
-                  <p>Specialisations :</p>
-                  <p>Crossfit Expoort, Nutrition & Rehab</p>
-                </span>
-                <div>
-                  <a className="socialmedia">
-                    <Facebook />
-                  </a>
-                  <a className="socialmedia">
-                    {" "}
-                    <Instagram />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="each-member">
-              <img width="300px" height="350vh" src={Photo2} />
-              <div className="about-member">
-                <h1
-                  style={{
-                    color: "red",
-                    paddingBottom: "5px",
-                    borderBottom: "1px solid white",
-                  }}
-                >
-                  Amanda
-                </h1>
-                <span>
-                  <p>Specialisations :</p>
-                  <p>Crossfit Expoort, Nutrition & Rehab</p>
-                </span>
-                <div>
-                  <a className="socialmedia">
-                    <Facebook />
-                  </a>
-                  <a className="socialmedia">
-                    {" "}
-                    <Instagram />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="pricing">
-          <div className="content-5">
-            <div className="title">
-              <div className="text-wrapper-15">OUR PLAN</div>
-              <div className="text-wrapper-16">Choose the Program</div>
-            </div>
-            <div className="price">
-              <div className="element-7">
-                <div className="content-6">
-                  <div className="sub-content-3">
-                    <div className="plan-2">
-                      <div className="text-wrapper-17">Basic</div>
-                      <img className="group" alt="Group" src={Group37} />
+              <div className="testimonial">
+                <div className="overlap-5">
+                  <div className="content-15">
+                    <div className="content-16">
+                      <h1 className="rev">Reviews</h1>
+                      <Slideshow />
                     </div>
-                    <div className="div-2">
-                      <div className="sub-title">
-                        <div className="text-wrapper-18">$25 / month</div>
-                        <div className="billed-yearly">
-                          <div className="overlap-group-2">
-                            <div className="text-wrapper-19">
-                              30% Off for Beginners
+                  </div>
+                </div>
+              </div>
+              <div className="team">
+                <div className="title-3">
+                  <div className="text-wrapper-15">OUR TRAINERS</div>
+                  <p className="text-wrapper-16">We Trained You to Gain</p>
+                </div>
+                <div className="members">
+                  <div className="each-member">
+                    <img width="300px" height="350vh" src={Photo} />
+                    <div className="about-member">
+                      <h1
+                        style={{
+                          color: "red",
+                          paddingBottom: "5px",
+                          borderBottom: "1px solid white",
+                        }}
+                      >
+                        Amanda
+                      </h1>
+                      <span>
+                        <p>Specialisations :</p>
+                        <p>Crossfit Expoort, Nutrition & Rehab</p>
+                      </span>
+                      <div>
+                        <a className="socialmedia">
+                          <Facebook />
+                        </a>
+                        <a className="socialmedia">
+                          {" "}
+                          <Instagram />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="each-member">
+                    <img width="300px" height="350vh" src={Photo1} />
+                    <div className="about-member">
+                      <h1
+                        style={{
+                          color: "red",
+                          paddingBottom: "5px",
+                          borderBottom: "1px solid white",
+                        }}
+                      >
+                        Amanda
+                      </h1>
+                      <span>
+                        <p>Specialisations :</p>
+                        <p>Crossfit Expoort, Nutrition & Rehab</p>
+                      </span>
+                      <div>
+                        <a className="socialmedia">
+                          <Facebook />
+                        </a>
+                        <a className="socialmedia">
+                          {" "}
+                          <Instagram />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="each-member">
+                    <img width="300px" height="350vh" src={Photo2} />
+                    <div className="about-member">
+                      <h1
+                        style={{
+                          color: "red",
+                          paddingBottom: "5px",
+                          borderBottom: "1px solid white",
+                        }}
+                      >
+                        Amanda
+                      </h1>
+                      <span>
+                        <p>Specialisations :</p>
+                        <p>Crossfit Expoort, Nutrition & Rehab</p>
+                      </span>
+                      <div>
+                        <a className="socialmedia">
+                          <Facebook />
+                        </a>
+                        <a className="socialmedia">
+                          {" "}
+                          <Instagram />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="pricing">
+                <div className="content-5">
+                  <div className="title">
+                    <div className="text-wrapper-15">OUR PLAN</div>
+                    <div className="text-wrapper-16">Choose the Program</div>
+                  </div>
+                  <div className="price">
+                    <div className="element-7">
+                      <div className="content-6">
+                        <div className="sub-content-3">
+                          <div className="plan-2">
+                            <div className="text-wrapper-17">Basic</div>
+                            <img className="group" alt="Group" src={Group37} />
+                          </div>
+                          <div className="div-2">
+                            <div className="sub-title">
+                              <div className="text-wrapper-18">$25 / month</div>
+                              <div className="billed-yearly">
+                                <div className="overlap-group-2">
+                                  <div className="text-wrapper-19">
+                                    30% Off for Beginners
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="div-2">
-                    <div className="plan-features">
-                      <p className="div-3">
-                        <span className="text-wrapper-20">
-                          1 Day Free Trial <br />
-                        </span>
-                        <span className="text-wrapper-21"> 20 minutes of </span>
-                        <span className="text-wrapper-22">
-                          heart-pumping spin <br />
-                        </span>
-                        <span className="text-wrapper-21">
-                          20 minutes of strength training
-                          <br />
-                        </span>
-                        <span className="text-wrapper-22">50 Class</span>
-                        <span className="text-wrapper-21">
-                          {" "}
-                          Times Available <br /> 20 minutes of invigorating yoga
-                        </span>
-                      </p>
-                    </div>
-                    <button className="button-4">
-                      <div className="text-wrapper-23">Get Started</div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="element-7">
-                <div className="content-6">
-                  <div className="sub-content-3">
-                    <div className="plan-3">
-                      <div className="text-wrapper-24">Standard</div>
-                      <img className="group-2" alt="Group" src={Group38} />
-                    </div>
-                    <div className="div-2">
-                      <div className="sub-title">
-                        <div className="text-wrapper-18">$35 / month</div>
-                        <div className="overlap-group-wrapper">
-                          <div className="overlap-group-3">
-                            <div className="text-wrapper-25">Most popular</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="div-2">
-                    <div className="element-week-free-trial-wrapper">
-                      <p className="div-3">
-                        <span className="text-wrapper-20">
-                          2 Week Free Trial <br />
-                        </span>
-                        <span className="text-wrapper-21"> 30 minutes of </span>
-                        <span className="text-wrapper-22">
-                          heart-pumping spin <br />
-                        </span>
-                        <span className="text-wrapper-21">
-                          30 minutes of strength training
-                          <br />
-                        </span>
-                        <span className="text-wrapper-22">50 Class</span>
-                        <span className="text-wrapper-21">
-                          {" "}
-                          Times Available <br /> 20 minutes of invigorating yoga
-                          <br />
-                          Unlimited{" "}
-                        </span>
-                        <span className="text-wrapper-22">CrossFit</span>
-                        <span className="text-wrapper-21">
-                          {" "}
-                          Classes <br />
-                          One Full Month Free <br />
-                          First 25 New Members Only
-                        </span>
-                      </p>
-                    </div>
-                    <button className="button-5">
-                      <div className="text-wrapper-26">Get Started</div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="element-7">
-                <div className="content-6">
-                  <div className="sub-content-3">
-                    <div className="plan-4">
-                      <div className="text-wrapper-27">Premium</div>
-                      <img className="icon" alt="Icon" src={Icon} />
-                    </div>
-                    <div className="div-2">
-                      <div className="sub-title">
-                        <div className="text-wrapper-18">$50 / month</div>
-                        <div className="billed-yearly">
-                          <div className="overlap-group-2">
-                            <p className="text-wrapper-19">
-                              10% Off for Yoga Class
+                        <div className="div-2">
+                          <div className="plan-features">
+                            <p className="div-3">
+                              <span className="text-wrapper-20">
+                                1 Day Free Trial <br />
+                              </span>
+                              <span className="text-wrapper-21">
+                                {" "}
+                                20 minutes of{" "}
+                              </span>
+                              <span className="text-wrapper-22">
+                                heart-pumping spin <br />
+                              </span>
+                              <span className="text-wrapper-21">
+                                20 minutes of strength training
+                                <br />
+                              </span>
+                              <span className="text-wrapper-22">50 Class</span>
+                              <span className="text-wrapper-21">
+                                {" "}
+                                Times Available <br /> 20 minutes of
+                                invigorating yoga
+                              </span>
                             </p>
                           </div>
+                          <button className="button-4">
+                            <div className="text-wrapper-23">Get Started</div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="element-7">
+                      <div className="content-6">
+                        <div className="sub-content-3">
+                          <div className="plan-3">
+                            <div className="text-wrapper-24">Standard</div>
+                            <img
+                              className="group-2"
+                              alt="Group"
+                              src={Group38}
+                            />
+                          </div>
+                          <div className="div-2">
+                            <div className="sub-title">
+                              <div className="text-wrapper-18">$35 / month</div>
+                              <div className="overlap-group-wrapper">
+                                <div className="overlap-group-3">
+                                  <div className="text-wrapper-25">
+                                    Most popular
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="div-2">
+                          <div className="element-week-free-trial-wrapper">
+                            <p className="div-3">
+                              <span className="text-wrapper-20">
+                                2 Week Free Trial <br />
+                              </span>
+                              <span className="text-wrapper-21">
+                                {" "}
+                                30 minutes of{" "}
+                              </span>
+                              <span className="text-wrapper-22">
+                                heart-pumping spin <br />
+                              </span>
+                              <span className="text-wrapper-21">
+                                30 minutes of strength training
+                                <br />
+                              </span>
+                              <span className="text-wrapper-22">50 Class</span>
+                              <span className="text-wrapper-21">
+                                {" "}
+                                Times Available <br /> 20 minutes of
+                                invigorating yoga
+                                <br />
+                                Unlimited{" "}
+                              </span>
+                              <span className="text-wrapper-22">CrossFit</span>
+                              <span className="text-wrapper-21">
+                                {" "}
+                                Classes <br />
+                                One Full Month Free <br />
+                                First 25 New Members Only
+                              </span>
+                            </p>
+                          </div>
+                          <button className="button-5">
+                            <div className="text-wrapper-26">Get Started</div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="element-7">
+                      <div className="content-6">
+                        <div className="sub-content-3">
+                          <div className="plan-4">
+                            <div className="text-wrapper-27">Premium</div>
+                            <img className="icon" alt="Icon" src={Icon} />
+                          </div>
+                          <div className="div-2">
+                            <div className="sub-title">
+                              <div className="text-wrapper-18">$50 / month</div>
+                              <div className="billed-yearly">
+                                <div className="overlap-group-2">
+                                  <p className="text-wrapper-19">
+                                    10% Off for Yoga Class
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="div-2">
+                          <div className="plan-features">
+                            <p className="div-3">
+                              <span className="text-wrapper-20">
+                                2 Week Free Trial <br />
+                              </span>
+                              <span className="text-wrapper-21">
+                                {" "}
+                                50 minutes of{" "}
+                              </span>
+                              <span className="text-wrapper-22">
+                                heart-pumping spin <br />
+                              </span>
+                              <span className="text-wrapper-21">
+                                50 minutes of strength training
+                                <br />
+                              </span>
+                              <span className="text-wrapper-22">60 Class</span>
+                              <span className="text-wrapper-21">
+                                {" "}
+                                Times Available <br /> 50 minutes of
+                                invigorating yoga
+                              </span>
+                            </p>
+                          </div>
+                          <button className="button-4">
+                            <div className="text-wrapper-23">Get Started</div>
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div className="div-2">
-                    <div className="plan-features">
-                      <p className="div-3">
-                        <span className="text-wrapper-20">
-                          2 Week Free Trial <br />
-                        </span>
-                        <span className="text-wrapper-21"> 50 minutes of </span>
-                        <span className="text-wrapper-22">
-                          heart-pumping spin <br />
-                        </span>
-                        <span className="text-wrapper-21">
-                          50 minutes of strength training
-                          <br />
-                        </span>
-                        <span className="text-wrapper-22">60 Class</span>
-                        <span className="text-wrapper-21">
-                          {" "}
-                          Times Available <br /> 50 minutes of invigorating yoga
-                        </span>
-                      </p>
-                    </div>
-                    <button className="button-4">
-                      <div className="text-wrapper-23">Get Started</div>
-                    </button>
-                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div className="blog">
-          <div className="blog-2">
-            <div className="heading">
-              <div className="articles-news">Articles &amp; News</div>
-              <img className="img" alt="Blog" src={Blog} />
-            </div>
-            <div className="content-wrapper">
-              <div className="content-3">
-                <div className="date">
-                  <div className="text-wrapper-10">March 23, 2022</div>
-                  <div className="tag">
-                    <div className="element-5">
-                      <div className="text-wrapper-11">Fitness</div>
-                    </div>
+              <div className="blog">
+                <div className="blog-2">
+                  <div className="heading">
+                    <div className="articles-news">Articles &amp; News</div>
+                    <img className="img" alt="Blog" src={Blog} />
                   </div>
-                </div>
-                <div className="text-2">
-                  <p className="text-wrapper-12">
-                    The 10 best exercises to do in your park
-                  </p>
-                  <p className="there-are-many">
-                    There Are Many Variations Of Passages Of Lorem Ipsum
-                    Available, But The Majority Have Alterationlorem Ipsum Dolor
-                    Sit Amet, Consectetur Adipiscing Elit. Habitasse .
-                  </p>
-                </div>
-                <button className="button-2">
-                  <div className="text-wrapper-13">Read More</div>
-                </button>
-              </div>
-            </div>
-            <div className="content-wrapper">
-              <div className="content-3">
-                <div className="date">
-                  <div className="text-wrapper-10">March 23, 2022</div>
-                  <div className="element-wrapper">
-                    <div className="element-5">
-                      <div className="text-wrapper-11">Health</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="text-2">
-                  <p className="text-wrapper-12">
-                    The 10 best exercises to do in your park
-                  </p>
-                  <p className="there-are-many">
-                    There Are Many Variations Of Passages Of Lorem Ipsum
-                    Available, But The Majority Have Alterationlorem Ipsum Dolor
-                    Sit Amet, Consectetur Adipiscing Elit. Habitasse .
-                  </p>
-                </div>
-                <button className="button-2">
-                  <div className="text-wrapper-13">Read More</div>
-                </button>
-              </div>
-            </div>
-            <div className="element-6">
-              <div className="content-4">
-                <div className="date">
-                  <div className="text-wrapper-14">March 23, 2022</div>
-                  <div className="tag-2">
-                    <div className="element-5">
-                      <div className="text-wrapper-11">Nutrition</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="text-2">
-                  <p className="p">The 10 best exercises to do in your park</p>
-                  <p className="there-are-many-2">
-                    There Are Many Variations Of Passages Of Lorem Ipsum
-                    Available, But The Majority Have Alterationlorem Ipsum Dolor
-                    Sit Amet, Consectetur Adipiscing Elit. Habitasse .
-                  </p>
-                </div>
-                <button className="button-3">
-                  <div className="text-wrapper-13">Read More</div>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="footer">
-          <div className="follow-me">
-            <div className="text">
-              <p className="follow-me-on">
-                <span className="text-wrapper-8">Follow me on </span>
-                <span className="text-wrapper-9">Instagram</span>
-              </p>
-            </div>
-          </div>
-          <div className="footer-2">
-            <div className="sub-content">
-              <div className="sub-content-2">
-                <div className="element">
-                  <div className="content">
-                    <div className="logo">
-                      <img src={Group40} width="20%" />
-                      <h1>strengthy</h1>
-                    </div>
-                    <p className="it-is-a-long">
-                      It Is A Long Established Fact That A Reader Will Be
-                      Distracted By The Readable.
-                    </p>
-                  </div>
-                  <div className="call-and-mail">
-                    <p className="call">
-                      <span className="text-wrapper">
-                        Call :<br />
-                      </span>
-                      <span className="span">
-                        01234 987654
-                        <br />
-                        098765 34621
-                        <br />
-                      </span>
-                      <span className="text-wrapper">
-                        <br />
-                        Mail :
-                      </span>
-                      <span className="span">
-                        {" "}
-                        <br />
-                      </span>
-                      <span className="span">contact@fitnessfit.com</span>
-                    </p>
-                  </div>
-                </div>
-                <div className="element-2">
-                  <div className="text-wrapper-2">Utility Pages</div>
-                  <p className="style-guide">
-                    <span className="text-wrapper-3">
-                      Style Guide <br />
-                    </span>
-                    <span className="text-wrapper-4">Changelog</span>
-                    <span className="text-wrapper-3">
-                      {" "}
-                      <br />
-                      404 Page
-                      <br />
-                      Password Protected
-                      <br />
-                      Licenses
-                      <br />
-                      Contact
-                    </span>
-                  </p>
-                </div>
-                <div className="element-3">
-                  <div className="element-4">
-                    <div className="text-wrapper-2">Newsletter</div>
-                    <div className="content-2">
-                      <div className="button">
-                        <div className="mail">
-                          <input
-                            type="text"
-                            className="enter-your-email"
-                            placeholder="Enter your email"
-                            id="enter-your-email"
-                          />
+                  <div className="content-wrapper">
+                    <div className="content-3">
+                      <div className="date">
+                        <div className="text-wrapper-10">March 23, 2022</div>
+                        <div className="tag">
+                          <div className="element-5">
+                            <div className="text-wrapper-11">Fitness</div>
+                          </div>
                         </div>
-                        <button className="div-wrapper">
-                          <div className="text-wrapper-5">Subscribe</div>
-                        </button>
                       </div>
-                      <div className="social-media">
-                        <Instagram />
-                        <Facebook />
-                        <Twitter />
+                      <div className="text-2">
+                        <p className="text-wrapper-12">
+                          The 10 best exercises to do in your park
+                        </p>
+                        <p className="there-are-many">
+                          There Are Many Variations Of Passages Of Lorem Ipsum
+                          Available, But The Majority Have Alterationlorem Ipsum
+                          Dolor Sit Amet, Consectetur Adipiscing Elit. Habitasse
+                          .
+                        </p>
+                      </div>
+                      <button className="button-2">
+                        <div className="text-wrapper-13">Read More</div>
+                      </button>
+                    </div>
+                  </div>
+                  <div className="content-wrapper">
+                    <div className="content-3">
+                      <div className="date">
+                        <div className="text-wrapper-10">March 23, 2022</div>
+                        <div className="element-wrapper">
+                          <div className="element-5">
+                            <div className="text-wrapper-11">Health</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="text-2">
+                        <p className="text-wrapper-12">
+                          The 10 best exercises to do in your park
+                        </p>
+                        <p className="there-are-many">
+                          There Are Many Variations Of Passages Of Lorem Ipsum
+                          Available, But The Majority Have Alterationlorem Ipsum
+                          Dolor Sit Amet, Consectetur Adipiscing Elit. Habitasse
+                          .
+                        </p>
+                      </div>
+                      <button className="button-2">
+                        <div className="text-wrapper-13">Read More</div>
+                      </button>
+                    </div>
+                  </div>
+                  <div className="element-6">
+                    <div className="content-4">
+                      <div className="date">
+                        <div className="text-wrapper-14">March 23, 2022</div>
+                        <div className="tag-2">
+                          <div className="element-5">
+                            <div className="text-wrapper-11">Nutrition</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="text-2">
+                        <p className="p">
+                          The 10 best exercises to do in your park
+                        </p>
+                        <p className="there-are-many-2">
+                          There Are Many Variations Of Passages Of Lorem Ipsum
+                          Available, But The Majority Have Alterationlorem Ipsum
+                          Dolor Sit Amet, Consectetur Adipiscing Elit. Habitasse
+                          .
+                        </p>
+                      </div>
+                      <button className="button-3">
+                        <div className="text-wrapper-13">Read More</div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="footer">
+                <div className="follow-me">
+                  <div className="text">
+                    <p className="follow-me-on">
+                      <span className="text-wrapper-8">Follow me on </span>
+                      <span className="text-wrapper-9">Instagram</span>
+                    </p>
+                  </div>
+                </div>
+                <div className="footer-2">
+                  <div className="sub-content">
+                    <div className="sub-content-2">
+                      <div className="element">
+                        <div className="content">
+                          <div className="logo">
+                            <img src={Group40} width="20%" />
+                            <h1>strengthy</h1>
+                          </div>
+                          <p className="it-is-a-long">
+                            It Is A Long Established Fact That A Reader Will Be
+                            Distracted By The Readable.
+                          </p>
+                        </div>
+                        <div className="call-and-mail">
+                          <p className="call">
+                            <span className="text-wrapper">
+                              Call :<br />
+                            </span>
+                            <span className="span">
+                              01234 987654
+                              <br />
+                              098765 34621
+                              <br />
+                            </span>
+                            <span className="text-wrapper">
+                              <br />
+                              Mail :
+                            </span>
+                            <span className="span">
+                              {" "}
+                              <br />
+                            </span>
+                            <span className="span">contact@fitnessfit.com</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div className="element-2">
+                        <div className="text-wrapper-2">Utility Pages</div>
+                        <p className="style-guide">
+                          <span className="text-wrapper-3">
+                            Style Guide <br />
+                          </span>
+                          <span className="text-wrapper-4">Changelog</span>
+                          <span className="text-wrapper-3">
+                            {" "}
+                            <br />
+                            404 Page
+                            <br />
+                            Password Protected
+                            <br />
+                            Licenses
+                            <br />
+                            Contact
+                          </span>
+                        </p>
+                      </div>
+                      <div className="element-3">
+                        <div className="element-4">
+                          <div className="text-wrapper-2">Newsletter</div>
+                          <div className="content-2">
+                            <div className="button">
+                              <div className="mail">
+                                <input
+                                  type="text"
+                                  className="enter-your-email"
+                                  placeholder="Enter your email"
+                                  id="enter-your-email"
+                                />
+                              </div>
+                              <button className="div-wrapper">
+                                <div className="text-wrapper-5">Subscribe</div>
+                              </button>
+                            </div>
+                            <div className="social-media">
+                              <Instagram />
+                              <Facebook />
+                              <Twitter />
+                            </div>
+                          </div>
+                        </div>
+                        <a href=".header" className="top">
+                          <ArrowUpCircle color="red" size={48} />
+                        </a>
                       </div>
                     </div>
                   </div>
-                  <a href=".header" className="top">
-                    <ArrowUpCircle color="red" size={48}  />
-                  </a>
+                  <div className="copyright">
+                    <p className="copyright-fitnessfit">
+                      <span className="text-wrapper-6">Copyright © </span>
+                      <span className="text-wrapper-7">FitnessFit </span>
+                      <span className="text-wrapper-6">
+                        | Designed byVictorFlow Templates - Powered by Webflow{" "}
+                      </span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="copyright">
-              <p className="copyright-fitnessfit">
-                <span className="text-wrapper-6">Copyright © </span>
-                <span className="text-wrapper-7">FitnessFit </span>
-                <span className="text-wrapper-6">
-                  | Designed byVictorFlow Templates - Powered by Webflow{" "}
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
+          )}
+
+          {currentPage === "about" && (
+            <AboutPage /> // Render the AboutPage component
+          )}
+        </main>
       </div>
     </div>
   );
