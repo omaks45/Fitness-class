@@ -1769,3 +1769,111 @@ td {
     transform: translateX(-100%);
   }
 }
+
+.contact {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+}
+
+.menu-contact {
+  width: 400px;
+  float: left;
+  height: 70px;
+
+
+}
+.ul{
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.ul.li{
+  list-style: none;
+  margin-left: 62px;
+  margin-top: 27px;
+  font-size: 14px;
+}
+.ul .li .a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  transition: 0.4s ease-in-out;
+  
+}
+.ul.li.a:hover
+
+.contact.leftside {
+  height: 100%;
+  flex: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+
+}
+
+.contact.righttside{
+  height: 100%;
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact.righttside h1 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  padding: 30px;
+}
+
+form input {
+  height: 40px;
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid #050505;
+  color: #000;
+}
+
+form textarea {
+  margin-top: 15px;
+  height: 70px;
+  width: 80;
+  border: none;
+  border-bottom: 1px solid #121619;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+form input:focus,
+textarea:focus{
+  outline: none;
+}
+
+form label {
+  margin-top: 15px;
+  color: gray;
+
+}
+
+form button {
+  margin-top: 40px;
+  width: 140px;
+  height: 40px;
+  border: none;
+  background-color: #121619;
+  color: whitesmoke;
+  font-size: 20px;
+  cursor: pointer;
+}

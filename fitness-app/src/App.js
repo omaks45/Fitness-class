@@ -315,20 +315,18 @@ function App() {
                 </table>
               </div>
  <div className='contact'>
-    <header className="header">
+    <header className="navbar">
           <div className="logo">
             <img src={Group38} width="20%" />
             <h1>Reach us now</h1>
           </div>
-          <div className="menu-content">
-            <div className="home-about-classes">
-              <a href=".contact">contact</a>
-              <a>About</a>
-              <a>Classes</a>
-              <a>Trainers</a>
-              <a>News</a>
-              <a>homepage</a>
-            </div>
+          <div className="menu-contact">
+            <ul>
+              <li><a href="/Homepage">Home</a></li>
+              <li><a href="/">Contact</a></li>
+
+              
+            </ul>
           </div>
         </header>
       <div className='leftside'style={{backgroundImage: `url(${BannerImage})`}}>
