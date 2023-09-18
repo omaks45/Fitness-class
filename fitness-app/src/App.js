@@ -314,8 +314,44 @@ function App() {
                   </tbody>
                 </table>
               </div>
+ <div className='contact'>
+    <header className="header">
+          <div className="logo">
+            <img src={Group38} width="20%" />
+            <h1>Reach us now</h1>
+          </div>
+          <div className="menu-content">
+            <div className="home-about-classes">
+              <a href=".contact">contact</a>
+              <a>About</a>
+              <a>Classes</a>
+              <a>Trainers</a>
+              <a>News</a>
+              <a>homepage</a>
+            </div>
+          </div>
+        </header>
+      <div className='leftside'style={{backgroundImage: `url(${BannerImage})`}}>
+        <h2>Reach us now</h2>
+        <div/>
 
-              {/* <div className="table-2">
+      <div className='rightside'>
+        <h1>contact Us</h1>
+        <form id='contact-form ' method='post'>
+          <label htmlFor='name'>Full Name</label>
+          <input name='name' placeholder='Enter full name ...' type='text' />
+          <label htmlFor='email'>Email</label>
+          <input name='email' placeholder='Enter email ...' type='text' />
+          <label htmlFor='message'>Message</label>
+          <textarea rows='6' placeholder='Enter message ...' required ><textarea />
+          <button type='submit'>send message</button>
+        </form>
+        <div/>
+
+  </div>
+
+              {/* <d
+              iv className="table-2">
                 <div className="overlap-group-5">
                   <div className="table-content">
                     <div className="shedule">
