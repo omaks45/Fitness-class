@@ -83,7 +83,7 @@ function App() {
         <header className="header">
           <div className="logo">
             <img src={Group40} width="20%" />
-            <h1>strengthy</h1>
+            <h1>strengthyy</h1>
           </div>
           <div className="menu-content">
             <div className="home-about-classes">

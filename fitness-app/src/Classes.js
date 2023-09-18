@@ -15,7 +15,7 @@ function ClassPage() {
   return (
     <div>
       <div className="about-banner">
-        <h1>CLASSES</h1>
+        <h1>CLASSESs</h1>
       </div>
       <div className="class">
         <div className="class-header">
