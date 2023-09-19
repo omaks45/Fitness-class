@@ -1,5 +1,5 @@
 import React from "react";
-import group38 from "../images/group38.png";
+import Imagee from "../images/Imagee.png";
 import "../styles/Contact.css";
 import Navbar from "./components/navbar";
 
@@ -11,7 +11,7 @@ function Contact() {
       <Navbar />
       <div
         className="leftSide"
-        style={{ backgroundImage: `url(${group38})` }}
+        style={{ backgroundImage: `url(${Imagee})` }}
       ></div>
       <div className="rightSide">
         <h1> Contact Us</h1>
