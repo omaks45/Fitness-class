@@ -20,6 +20,8 @@ import Group37 from "./images/Group37.png";
 import Group38 from "./images/group38.png";
 import Icon from "./images/icon.png";
 import Blog from "./images/blog.png";
+import Contact from "./pages/Contact"  
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 // table
 const data = [
@@ -314,39 +316,7 @@ function App() {
                   </tbody>
                 </table>
               </div>
- <div className='contact'>
-    <header className="navbar">
-          <div className="logo">
-            <img src={Group38} width="20%" />
-            <h1>Reach us now</h1>
-          </div>
-          <div className="menu-contact">
-            <ul>
-              <li><a href="/Homepage">Home</a></li>
-              <li><a href="/">Contact</a></li>
-
-              
-            </ul>
-          </div>
-        </header>
-      <div className='leftside'style={{backgroundImage: `url(${BannerImage})`}}>
-        <h2>Reach us now</h2>
-        <div/>
-
-      <div className='rightside'>
-        <h1>contact Us</h1>
-        <form id='contact-form ' method='post'>
-          <label htmlFor='name'>Full Name</label>
-          <input name='name' placeholder='Enter full name ...' type='text' />
-          <label htmlFor='email'>Email</label>
-          <input name='email' placeholder='Enter email ...' type='text' />
-          <label htmlFor='message'>Message</label>
-          <textarea rows='6' placeholder='Enter message ...' required ><textarea />
-          <button type='submit'>send message</button>
-        </form>
-        <div/>
-
-  </div>
+ 
 
               {/* <d
               iv className="table-2">
@@ -922,7 +892,14 @@ function App() {
           </div>
         </div>
       </div>
+      <Router>
+        <switch>
+          
+          <Route path="Contact" exact Component={Contact} />
+        </switch>
+      </Router>
     </div>
+    
   );
 }
 
