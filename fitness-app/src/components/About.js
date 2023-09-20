@@ -1,18 +1,18 @@
-import "./styles/About.css";
-import G1 from "./images/g1.png";
-import G2 from "./images/g2.png";
-import G3 from "./images/g3.jpg";
-import Gicon from "./images/gicon.png";
-import Gicon1 from "./images/gicon1.png";
-import Gicon2 from "./images/gicon2.png";
-import Photoo from "./images/photo.png";
-import Photo1 from "./images/photo(1).png";
-import Photo2 from "./images/hoto(2).png";
+import "../styles/About.css";
+import G1 from "../images/g1.png";
+import G2 from "../images/g2.png";
+import G3 from "../images/g3.jpg";
+import Gicon from "../images/gicon.png";
+import Gicon1 from "../images/gicon1.png";
+import Gicon2 from "../images/gicon2.png";
+import Photoo from "../images/photo.png";
+import Photo1 from "../images/photo(1).png";
+import Photo2 from "../images/hoto(2).png";
 import { Facebook } from "react-feather";
 import { Instagram } from "react-feather";
 import { Twitter } from "react-feather";
 import { ArrowUpCircle } from "react-feather";
-import Groupp40 from "./images/Group 40.png";
+import Groupp40 from "../images/Group 40.png";
 
 function AboutPage() {
   return (

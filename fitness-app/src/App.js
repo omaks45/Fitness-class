@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
-import AboutPage from "./About.js";
-import ClassPage from "./Classes.js";
+import AboutPage from "./components/About.js";
+import ClassPage from "./components/Classes.js";
 import Group40 from "./images/Group 40.png";
 import Image16 from "./images/Image-16.png";
 import Image17 from "./images/Image-17.png";
@@ -83,7 +83,7 @@ function App() {
         <header className="header">
           <div className="logo">
             <img src={Group40} width="20%" />
-            <h1>strengthy</h1>
+            <h1>strengthyy</h1>
           </div>
           <div className="menu-content">
             <div className="home-about-classes">
