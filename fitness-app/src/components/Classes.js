@@ -1,15 +1,15 @@
-import "./styles/Classes.css";
-import Image16 from "./images/Image-16.png";
-import Image17 from "./images/Image-17.png";
-import Image18 from "./images/Image-18.png";
-import C1 from "./images/c1.png";
-import C2 from "./images/c2.png";
-import C3 from "./images/c3.png";
+import "../styles/Classes.css";
+import Image16 from "../images/Image-16.png";
+import Image17 from "../images/Image-17.png";
+import Image18 from "../images/Image-18.png";
+import C1 from "../images/c1.png";
+import C2 from "../images/c2.png";
+import C3 from "../images/c3.png";
 import { Facebook } from "react-feather";
 import { Instagram } from "react-feather";
 import { Twitter } from "react-feather";
 import { ArrowUpCircle } from "react-feather";
-import Groupp40 from "./images/Group 40.png";
+import Groupp40 from "../images/Group 40.png";
 
 function ClassPage() {
   return (
