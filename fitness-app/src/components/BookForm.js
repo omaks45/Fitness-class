@@ -22,7 +22,7 @@ function BookForm() {
     console.log("Form submitted with data:", formData);
     sessionStorage.setItem("formData", JSON.stringify(formData));
     alert("Thank you for submitting the form!");
-    window.location.reload();
+    // window.location.reload();
   };
 
   return (
