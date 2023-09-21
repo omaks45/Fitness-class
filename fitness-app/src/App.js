@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useState } from "react";
 import AboutPage from "./components/About.js";
 import ClassPage from "./components/Classes.js";
+import BookClass from "./components/BookClass.js";
 import Group40 from "./images/Group 40.png";
 import Image16 from "./images/Image-16.png";
 import Image17 from "./images/Image-17.png";
@@ -23,6 +24,7 @@ import Group37 from "./images/Group37.png";
 import Group38 from "./images/group38.png";
 import Icon from "./images/icon.png";
 import Blog from "./images/blog.png";
+
 
 // table
 const data = [
@@ -77,6 +79,12 @@ function App() {
     setCurrentPage("class");
   };
 
+  const navigateToBook = () => {
+    setCurrentPage("book");
+  };
+
+  
+
   return (
     <div className="homepage">
       <div className="div">
@@ -101,11 +109,13 @@ function App() {
               >
                 About
               </button>
-              <button onClick={navigateToClass} className="header-links">Classes</button>
+              <button onClick={navigateToClass} className="header-links">
+                Classes
+              </button>
               <button className="header-links">Trainers</button>
               <button className="header-links">Newss</button>
               <button className="header-links">Contact</button>
-              <button className="button-13">Book Class</button>
+              <button onClick={navigateToBook} className="button-13">Book Class</button>
             </div>
           </div>
         </header>
@@ -973,13 +983,11 @@ function App() {
             </div>
           )}
 
-          {currentPage === "about" && (
-            <AboutPage />
-          )}
+          {currentPage === "about" && <AboutPage />}
 
-          {currentPage === "class" && (
-            <ClassPage />
-          )}
+          {currentPage === "class" && <ClassPage />}
+
+          {currentPage === "book" && <BookClass />}
         </main>
       </div>
     </div>
