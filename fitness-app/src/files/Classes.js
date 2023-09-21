@@ -12,10 +12,18 @@ import { ArrowUpCircle } from "react-feather";
 import Groupp40 from "../images/Group 40.png";
 
 function ClassPage() {
+  // const Style = {
+  //   padding: "10px 20px",
+  //   margin: "2% 0 0 45%",
+  //   textAlign: "center",
+  //   backgroundColor: "#a1f65e",
+  //   border: "none",
+  // };
   return (
     <div>
       <div className="about-banner">
-        <h1>CLASSESs</h1>
+        <h1>CLASSES</h1>
+        {/* <button style={Style}>Book now</button> */}
       </div>
       <div className="class">
         <div className="class-header">
