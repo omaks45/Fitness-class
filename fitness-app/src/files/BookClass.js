@@ -1,4 +1,6 @@
+import { useState } from "react";
 import "../styles/Book.css";
+import Modal from "../components/Modal.js";
 import Boxing from "../images/boxing-icon.png";
 import Dumbbell from "../images/dumbbell.png";
 import Yoga from "../images/yoga.png";
@@ -11,8 +13,17 @@ import { Twitter } from "react-feather";
 import { ArrowUpCircle } from "react-feather";
 import Groupp40 from "../images/Group 40.png";
 
-
 function BookClass() {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const handleBookClassClick = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalVisible(false);
+  };
+
   return (
     <div>
       <div className="booking">
@@ -25,10 +36,13 @@ function BookClass() {
                 <h3>CHISEL IT</h3>
               </div>
               <p>
-                It’s a party for your muscles! Shape, tone, sculpt and chisel
-                your way through a transformative body experience.
+                Unleash your inner strength and sculpt the body you've always
+                dreamed of in our dynamic muscle-building class. Get ready to
+                challenge yourself, increase muscle mass, and transform your
+                physique under expert guidance. Join us now to embark on your
+                journey to a stronger, more confident you.
               </p>
-              <button><a href="/.formm">Book now</a></button>
+              <button onClick={handleBookClassClick}>Book now</button>
             </div>
 
             <div className="book">
@@ -37,10 +51,13 @@ function BookClass() {
                 <h3>YOGA</h3>
               </div>
               <p>
-                Ready for the ride of your life? We’ve got something for however
-                you want to spin, so saddle up and get those wheels turning!
+                Discover inner peace, enhance flexibility, and boost your
+                overall well-being in our rejuvenating yoga class. Join us for a
+                transformative journey of mindfulness, guided by experienced
+                instructors, in a serene and welcoming atmosphere. Enroll today
+                to find your path to balance and vitality.
               </p>
-              <button>Book now</button>
+              <button onClick={handleBookClassClick}>Book now</button>
             </div>
 
             <div className="book">
@@ -49,10 +66,14 @@ function BookClass() {
                 <h3>ACTION SPORTS</h3>
               </div>
               <p>
-                Get ready to muscle up for a full-blown body workout that will
-                get you pumped, in the sweaty spirit and totally wanting more!
+                Experience the thrill of action sports like never before! Our
+                action sports class is your gateway to adrenaline-pumping
+                excitement. From skateboarding to parkour, we'll teach you the
+                skills and techniques to conquer the urban playground. Dive into
+                the world of extreme sports and become a true daredevil. Enroll
+                today and start living life on the edge!
               </p>
-              <button>Book now</button>
+              <button onClick={handleBookClassClick}>Book now</button>
             </div>
 
             <div className="book">
@@ -61,10 +82,14 @@ function BookClass() {
                 <h3>THE RIDE</h3>
               </div>
               <p>
-                Ready for the ride of your life? We’ve got something for however
-                you want to spin, so saddle up and get those wheels turning!
+                Elevate your lower body strength and redefine your leg muscles
+                in our specialized leg muscle class. Our program is designed to
+                sculpt and tone your legs while increasing endurance and
+                stability. Join us now to unlock powerful, shapely legs that
+                will make every step feel like a confident stride. Don't wait –
+                enroll today and take the first step towards leg day success!
               </p>
-              <button>Book now</button>
+              <button onClick={handleBookClassClick}>Book now</button>
             </div>
 
             <div className="book">
@@ -73,10 +98,14 @@ function BookClass() {
                 <h3>CARDIO DANCE</h3>
               </div>
               <p>
-                Get grooving and moving as you follow the beat and feel the
-                burn. Come channel your inner dance star!
+                Join our dance class and let the rhythm move you! Whether you're
+                a beginner or an experienced dancer, our classes cater to all
+                skill levels. Get ready to groove to the latest beats, learn new
+                dance styles, and boost your confidence on the dance floor.
+                Embrace the joy of movement and express yourself through dance.
+                Enroll now and dance your way to a happier, healthier you!
               </p>
-              <button>Book now</button>
+              <button onClick={handleBookClassClick}>Book now</button>
             </div>
 
             <div className="book">
@@ -85,13 +114,16 @@ function BookClass() {
                 <h3>ADVANCED HIIT</h3>
               </div>
               <p>
-                Get sweaty with your best friend or make a new workout buddy on
-                the turf in our small group training sessions!
+                Elevate your fitness game with our advanced intense training
+                class. Get ready to sweat, push your boundaries, and see
+                remarkable results. Join us now and take your fitness journey to
+                new heights. It's time to unleash your full potential!
               </p>
-              <button>Book now</button>
+              <button onClick={handleBookClassClick}>Book now</button>
             </div>
           </div>
         </div>
+        {isModalVisible && <Modal onClose={handleCloseModal} />}
       </div>
       <div className="footer">
         <div className="follow-me">
