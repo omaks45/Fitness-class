@@ -36,9 +36,12 @@ function ClassPage() {
             <div className="text-4">
               <div className="text-wrapper-56">Pilates Training</div>
               <p className="containing-lorem">
-                Containing Lorem Ipsum Passagesand More Recently With
+                Pilates training is a low-impact exercise method that focuses on
+                core strength, flexibility, and overall body awareness through
+                controlled movements and breathing techniques. It aims to
+                improve posture, balance, and muscle tone.
               </p>
-              <button className="button-9">Read More</button>
+              {/* <button className="button-9">Read More</button> */}
             </div>
           </div>
           <div className="element-17">
@@ -46,9 +49,13 @@ function ClassPage() {
             <div className="text-4">
               <div className="text-wrapper-56">Aerobic Training</div>
               <p className="containing-lorem">
-                Containing Lorem Ipsum Passagesand More Recently With
+                Aerobic training, also known as cardio exercise, involves
+                activities that increase your heart rate and breathing to
+                improve cardiovascular fitness. It enhances endurance, burns
+                calories, and benefits overall health by strengthening the heart
+                and lungs.
               </p>
-              <button className="button-9">Read More</button>
+              {/* <button className="button-9">Read More</button> */}
             </div>
           </div>
           <div className="element-17">
@@ -56,9 +63,13 @@ function ClassPage() {
             <div className="text-4">
               <div className="text-wrapper-56">CrossFit Workout</div>
               <p className="containing-lorem">
-                Containing Lorem Ipsum Passagesand More Recently With
+                CrossFit is a high-intensity fitness program that combines
+                elements of weightlifting, aerobic exercise, and functional
+                movements to improve strength, endurance, and overall fitness.
+                Workouts typically involve a variety of exercises performed at
+                high intensity for a set duration or repetitions.
               </p>
-              <button className="button-9">Read More</button>
+              {/* <button className="button-9">Read More</button> */}
             </div>
           </div>
         </div>
@@ -72,9 +83,12 @@ function ClassPage() {
             <div className="text-4">
               <div className="text-wrapper-56">Pilates Training</div>
               <p className="containing-lorem">
-                Containing Lorem Ipsum Passagesand More Recently With
+                Pilates training is a low-impact exercise method that focuses on
+                core strength, flexibility, and overall body awareness through
+                controlled movements and breathing techniques. It aims to
+                improve posture, balance, and muscle tone.
               </p>
-              <button className="button-9">Read More</button>
+              {/* <button className="button-9">Read More</button> */}
             </div>
           </div>
           <div className="element-17">
@@ -82,9 +96,13 @@ function ClassPage() {
             <div className="text-4">
               <div className="text-wrapper-56">Aerobic Training</div>
               <p className="containing-lorem">
-                Containing Lorem Ipsum Passagesand More Recently With
+                Aerobic training, also known as cardio exercise, involves
+                activities that increase your heart rate and breathing to
+                improve cardiovascular fitness. It enhances endurance, burns
+                calories, and benefits overall health by strengthening the heart
+                and lungs.
               </p>
-              <button className="button-9">Read More</button>
+              {/* <button className="button-9">Read More</button> */}
             </div>
           </div>
           <div className="element-17">
@@ -92,9 +110,13 @@ function ClassPage() {
             <div className="text-4">
               <div className="text-wrapper-56">CrossFit Workout</div>
               <p className="containing-lorem">
-                Containing Lorem Ipsum Passagesand More Recently With
+                CrossFit is a high-intensity fitness program that combines
+                elements of weightlifting, aerobic exercise, and functional
+                movements to improve strength, endurance, and overall fitness.
+                Workouts typically involve a variety of exercises performed at
+                high intensity for a set duration or repetitions.
               </p>
-              <button className="button-9">Read More</button>
+              {/* <button className="button-9">Read More</button> */}
             </div>
           </div>
         </div>

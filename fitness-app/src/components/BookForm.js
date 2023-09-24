@@ -30,7 +30,7 @@ function BookForm() {
       <div className="form-container">
         <h2>Registration Form</h2>
         <form className="form" onSubmit={handleSubmit}>
-          <div className="form-value">
+          {/* <div className="form-value">
             <label htmlFor="firstName">First Name:</label>
             <input
               type="text"
@@ -60,6 +60,19 @@ function BookForm() {
               id="email"
               name="email"
               value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div> */}
+
+          <div className="form-value">
+            <label htmlFor="phone">Status:</label>
+            <input
+              type="text"
+              id="status"
+              placeholder="begginner/ intermediate/ advanced"
+              name="status"
+              value={formData.phone}
               onChange={handleChange}
               required
             />
