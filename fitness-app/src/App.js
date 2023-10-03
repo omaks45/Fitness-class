@@ -23,7 +23,7 @@ import { ArrowUpCircle } from "react-feather";
 import Group37 from "./images/Group37.png";
 import Group38 from "./images/group38.png";
 import Icon from "./images/icon.png";
-import Blog from "./images/blog.png";ls
+import Blog from "./images/blog.png";
 
 // table
 const data = [
