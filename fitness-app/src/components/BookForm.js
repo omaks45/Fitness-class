@@ -53,7 +53,7 @@ function BookForm() {
             <input
               type="text"
               id="level"
-              placeholder="begginer/ intermediate/ advanced"
+              placeholder="beginner/ intermediate/ advanced"
               name="level"
               value={formData.phone}
               onChange={handleChange}
