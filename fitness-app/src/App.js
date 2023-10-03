@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import AboutPage from "./files/About.js";
 import ClassPage from "./files/Classes.js";
 import BookClass from "./files/BookClass.js";
+import Contact from "./files/Contact.js";
 import Group40 from "./images/Group 40.png";
 import Image16 from "./images/Image-16.png";
 import Image17 from "./images/Image-17.png";
@@ -82,6 +83,10 @@ function App() {
     setCurrentPage("book");
   };
 
+  const navigateToContact = () => {
+    setCurrentPage("contact");
+  };
+
   return (
     <div className="homepage">
       <div className="div">
@@ -111,7 +116,7 @@ function App() {
               </button>
               {/* <button className="header-links">Trainers</button>
               <button className="header-links">Newss</button> */}
-              <button className="header-links">Contact</button>
+              <button onClick={navigateToContact} className="header-links">Contact</button>
               <button onClick={navigateToBook} className="button-13">
                 Book Class
               </button>
@@ -997,6 +1002,8 @@ function App() {
           {currentPage === "class" && <ClassPage />}
 
           {currentPage === "book" && <BookClass />}
+
+          {currentPage === "contact" && <Contact />}
         </main>
       </div>
     </div>
