@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/login.css";
 
 const Login = () => {
-  const [action, setAction] = useState("sign up");
+  const [action, setAction] = useState("signup");
   return (
     <div className="container">
       <div className="header">
@@ -24,7 +24,7 @@ const Login = () => {
         <div className="input">
           <input type="password" name="password" placeholder="password" />
         </div>
-        {action === "sign up" ? (
+        {action === "signup" ? (
           <div></div>
         ) : (
           <div className="forgot-password">
@@ -36,13 +36,13 @@ const Login = () => {
           <div
             className={action === "login" ? "submit gray" : "submit"}
             onClick={() => {
-              setAction("sign up");
+              setAction("signup");
             }}
           >
-            sign up
+            signup
           </div>
           <div
-            className={action === "sign up" ? "submit gray" : "submit"}
+            className={action === "signup" ? "submit gray" : "submit"}
             onClick={() => {
               setAction("login");
             }}
