@@ -27,7 +27,7 @@ const Login = () => {
         {action === "signup" ? (
           <div></div>
         ) : (
-          <div className="forgot-password">
+          <div className="forgot-password" name="forgot-password">
             lost password ? <span>click Here</span>
           </div>
         )}
