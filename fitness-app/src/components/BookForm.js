@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "../styles/BookForm.css";
+import PhoneInputGfg from "./PhoneNumberSelection";
 
 function BookForm() {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
+    classtype: "",
+    status: "",
+    level: "",
     phone: "",
   });
 
@@ -30,66 +31,53 @@ function BookForm() {
       <div className="form-container">
         <h2>Registration Form</h2>
         <form className="form" onSubmit={handleSubmit}>
-          {/* <div className="form-value">
-            <label htmlFor="firstName">First Name:</label>
+          <div className="form-value">
+            <label htmlFor="classtype">Class type:</label>
+            <select
+              id="classtype"
+              name="classtype"
+              value={formData.classtype}
+              onChange={handleChange}
+              required
+            >
+              <option>YOGA</option>
+              <option>CARDIO_DANCE</option>
+              <option>CHISEL_IT</option>
+              <option>THE_RIDE</option>
+              <option>ADVANCED_HIIT</option>
+              <option>ACTION_SPORTS</option>
+            </select>
+          </div>
+          <div className="form-value">
+            <label htmlFor="lastName">Level:</label>
             <input
               type="text"
-              id="firstName"
-              name="firstName"
-              value={formData.firstName}
+              id="level"
+              placeholder="begginer/ intermediate/ advanced"
+              name="level"
+              value={formData.phone}
               onChange={handleChange}
               required
             />
           </div>
+          
           <div className="form-value">
-            <label htmlFor="lastName">Last Name:</label>
-            <input
-              type="text"
-              id="lastName"
-              name="lastName"
-              value={formData.lastName}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div className="form-value">
-            <label htmlFor="email">Email Address:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div> */}
+            <PhoneInputGfg />
+           </div>
 
           <div className="form-value">
             <label htmlFor="phone">Status:</label>
             <input
               type="text"
               id="status"
-              placeholder="begginner/ intermediate/ advanced"
+              placeholder="schedule/ completed/ canceled"
               name="status"
               value={formData.phone}
               onChange={handleChange}
               required
             />
           </div>
-
-          <div className="form-value">
-            <label htmlFor="phone">Phone number:</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
+           
           <button type="submit">Submit</button>
         </form>
       </div>
