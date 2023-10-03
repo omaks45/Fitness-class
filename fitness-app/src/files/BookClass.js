@@ -226,7 +226,7 @@ function BookClass() {
               <span className="text-wrapper-6">Copyright © </span>
               <span className="text-wrapper-7">FitnessFit </span>
               <span className="text-wrapper-6">
-                | Designed byVictorFlow Templates - Powered by Webflow{" "}
+                | Designed by Banjo Adijat Adebimpe - Powered by Webflow{" "}
               </span>
             </p>
           </div>
