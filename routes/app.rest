@@ -1,0 +1,8 @@
+post http://localhost:80/api/signup
+Content-Type: application/json
+
+{
+    "name": "John",
+    "email": "kelvibu27@gmail.com",
+    "encry_password": "Pleased"
+}
