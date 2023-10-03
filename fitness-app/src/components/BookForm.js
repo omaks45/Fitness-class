@@ -4,7 +4,7 @@ import PhoneInputGfg from "./PhoneNumberSelection";
 
 function BookForm() {
   const [formData, setFormData] = useState({
-    classtype: "",
+    classType: "",
     status: "",
     level: "",
     phone: "",
@@ -32,10 +32,10 @@ function BookForm() {
         <h2>Registration Form</h2>
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-value">
-            <label htmlFor="classtype">Class type:</label>
+            <label htmlFor="classtype">ClassType:</label>
             <select
               id="classtype"
-              name="classtype"
+              name="classType"
               value={formData.classtype}
               onChange={handleChange}
               required

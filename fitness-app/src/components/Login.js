@@ -22,7 +22,7 @@ const Login = () => {
           <input type="email" name="email" placeholder="Email" />
         </div>
         <div className="input">
-          <input type="password" name="password" placeholder="password" />
+          <input type="password" name="encry_password" placeholder="password" />
         </div>
         {action === "signup" ? (
           <div></div>

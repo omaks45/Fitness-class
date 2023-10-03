@@ -45,7 +45,7 @@ function AboutPage() {
       </div> */}
       <div className="about-banner">
         <h1>
-          Start with us the body and <br /> mind clensing
+          Start with us the body and <br /> mind cleansing
         </h1>
       </div>
       <div className="about-box">
