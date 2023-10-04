@@ -4,6 +4,7 @@ import AboutPage from "./files/About.js";
 import ClassPage from "./files/Classes.js";
 import BookClass from "./files/BookClass.js";
 import Contact from "./files/Contact.js";
+import Login from "./components/Login";
 import Group40 from "./images/Group 40.png";
 import Image16 from "./images/Image-16.png";
 import Image17 from "./images/Image-17.png";
@@ -87,6 +88,10 @@ function App() {
     setCurrentPage("contact");
   };
 
+  const navigateToLogin = () => {
+    setCurrentPage("login");
+  };
+
   return (
     <div className="homepage">
       <div className="div">
@@ -136,7 +141,7 @@ function App() {
                     </p>
                   </div>
                   <div className="button-10">
-                    <button className="button-11">Start Today</button>
+                    <button onClick={navigateToLogin} className="button-11">Start Today</button>
                     <button onClick={navigateToAbout} className="button-12">
                       About Me
                     </button>
@@ -1004,6 +1009,8 @@ function App() {
           {currentPage === "book" && <BookClass />}
 
           {currentPage === "contact" && <Contact />}
+
+          {currentPage === "login" && <Login />}
         </main>
       </div>
     </div>

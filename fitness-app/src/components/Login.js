@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "../styles/login.css";
+import "../styles/Login.css";
 
 const Login = () => {
   const [action, setAction] = useState("signup");
   return (
     <div className="container">
-      <div className="header">
+      <div className="heeader">
         <div className="text">{action}</div>
         <div className="underline"></div>
       </div>

@@ -1,14 +1,15 @@
 import React from "react";
 import Imagee from "../images/Imagee.png";
 import "../styles/Contact.css";
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
+// import Login from "../components/Login";
 
 
 function Contact() {
   return (
     
     <div className="contact">
-      <Navbar />
+      {/* <Navbar /> */}
       <div
         className="leftSide"
         style={{ backgroundImage: `url(${Imagee})` }}
