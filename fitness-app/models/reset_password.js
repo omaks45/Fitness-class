@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 
-// Define the schema for the password reset collection
+// Define the schema for the password reset collection.
 const passwordResetSchema = new mongoose.Schema({
-  // User's email for whom the reset token is generated
+  // User's email for whom the reset token is generated.
   email: {
     type: String,
     required: true,
     unique: true,
   },
-  // Randomly generated reset token
+  // Randomly generated reset token.
   token: {
     type: String,
     required: true,
