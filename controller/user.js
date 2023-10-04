@@ -84,7 +84,7 @@ const signin = (req, res) => {
 module.exports = signin;
 
 //reset password function
-
+/*
 const resetPassword = async function (email, token, newPassword) {
   try {
     const resetRecord = await this.findOne({
@@ -120,6 +120,7 @@ const resetPassword = async function (email, token, newPassword) {
 };
 
 module.exports = resetPassword;
+*/
 
 
 //signout page function

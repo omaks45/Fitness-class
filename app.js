@@ -27,7 +27,14 @@ const userRoutes = require("./routes/user")
 
 // Using routes
 app.use('/api', userRoutes) 
-
+app.get('/health', (req, res) => {
+  console.log('checking health')
+  res.send('good ')
+})
+app.get('/', (req, res) => {
+  console.log('checking home page')
+  res.send('OK')
+})
 
 const port = process.env.PORT
 
