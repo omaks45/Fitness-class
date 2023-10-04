@@ -1,7 +1,9 @@
+// Import required modules
 const mongoose = require("mongoose")
 const crypto = require("crypto");
 const uuidv1 = require("uuid/v1");
 
+// Define the user schema
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -27,6 +29,7 @@ const userSchema = new mongoose.Schema({
   salt: String,
 }, {timestamps: true})
 
+// Define a virtual property for password
 userSchema.virtual("password")
   .set(function(password) {
     this._password = password
@@ -37,11 +40,13 @@ userSchema.virtual("password")
     return this._password
   })
 
+// Define methods for the user schema
 userSchema.methods = {
   authenticate: function(plainpassword) {
     return this.securePassword(plainpassword) === this.encry_password
   },
-
+  
+  // Method to secure a password
   securePassword: function(plainpassword) {
     if(!plainpassword) return "";
 
@@ -53,4 +58,5 @@ userSchema.methods = {
   }
 }
 
+// Export the user model
 module.exports = mongoose.model("User", userSchema)
