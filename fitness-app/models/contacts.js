@@ -1,4 +1,4 @@
-//The schema contact page
+// The schema contact page
 const mongoose = require('mongoose')
 
 const contactSchema = new mongoose.Schema({
