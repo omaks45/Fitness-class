@@ -39,7 +39,6 @@ const signup = async (req, res) => {
   }
 };
 
-module.exports = signup;
 
 
 //signin function
@@ -86,10 +85,8 @@ const signin = (req, res) => {
     });
 };
 
-module.exports = signin;
-
 //reset password function
-/*
+
 const resetPassword = async function (email, token, newPassword) {
   try {
     const resetRecord = await this.findOne({
@@ -124,9 +121,6 @@ const resetPassword = async function (email, token, newPassword) {
   }
 };
 
-module.exports = resetPassword;
-*/
-
 
 //signout page function
 
@@ -148,8 +142,6 @@ const signout = async (req, res) => {
 };
 
 
-module.exports = signout;
-
 //contact page functions
 const contacts = async (req, res) => {
   try {
@@ -168,8 +160,6 @@ const contacts = async (req, res) => {
     })
   }
 }
-
-module.exports = contacts;
 
 //scheduled function
 
@@ -240,4 +230,4 @@ cron.schedule('0 9 * * 1-6', () => {
   console.log('Scheduled task executed.');
 });
 
-module.exports = sendClassReminders;
+module.exports = { signup, signin, resetPassword, signout, contacts, sendClassReminders}
