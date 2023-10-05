@@ -13,26 +13,29 @@ const nodemailer = require('nodemailer')
 //signup function
 const signup = async (req, res) => {
   try {
-    //validate the data inputted by the user
-    const errors = validationResult(req)
+    console.log('signup started')
+    // Validate the data inputted by the user
+    const errors = validationResult(req);
 
-    if(!errors.isEmpty()) {
-        return res.status(400).json({
-            err: errors.array()[0].msg
-        })
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ err: errors.array()[0].msg });
     }
-    //get the data input from the user
-    const user = new User(req.body);
+
+    // Destructure the user data from the request body
+    const { name, email, password } = req.body;
+
+    // Create a new user instance
+    const user = new User({ name, email, password });
+
+    // Save the user data to the database
     const data = await user.save();
 
-    res.json({
-      message: 'successful',
-      data
-    });
+    // Respond with a success message and the saved data
+    res.json({ message: 'User registration successful', data });
   } catch (err) {
-    res.status(400).json({
-      err: 'could not add user'
-    });
+    // Handle any errors that occur during the registration process
+    console.error(err); // Log the error for debugging purposes
+    res.status(500).json({ err: 'An error occurred during user registration' });
   }
 };
 
@@ -42,7 +45,9 @@ module.exports = signup;
 //signin function
 
 const signin = (req, res) => {
+
   const {email, password} = req.body;
+  console.log('signin started', email, password)
 
   User.findOne({email})
     .then(user => {
@@ -149,6 +154,7 @@ module.exports = signout;
 const contacts = async (req, res) => {
   try {
     const user = new Contact(req.body);
+    console.log('contacts started')
     const data = await user.save();
 
     res.json({

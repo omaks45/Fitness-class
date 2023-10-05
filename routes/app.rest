@@ -1,8 +1,8 @@
-post http://localhost:80/api/contact
+post https://fitness-app-r068.onrender.com/api/signup
 Content-Type: application/json
 
 {
     "name": "Agbor jackson",
-    "message": "I am a software developer",
-    "email": "agborjackson@gmail.com"
+    "email": "agborjackson@gmail.com",
+    "password": "Omaks45theory"
 }
