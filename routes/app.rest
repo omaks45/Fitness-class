@@ -1,8 +1,0 @@
-post https://fitness-app-r068.onrender.com/api/signup
-Content-Type: application/json
-
-{
-    "name": "Agbor jackson",
-    "email": "agborjackson@gmail.com",
-    "password": "Omaks45theory"
-}
