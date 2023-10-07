@@ -20,13 +20,7 @@ mongoose.connect(process.env.MONGO_URL, {
 // Use parsing middleware
 app.use(bodyParser.json())
 app.use(cookieParser())
-const corsOptions = {
-  origin: 'https://https://fitness-app-4pmc.onrender.com',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true, // Allow cookies and authentication headers
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 
 // Import the routes
 const userRoutes = require("./routes/user")
