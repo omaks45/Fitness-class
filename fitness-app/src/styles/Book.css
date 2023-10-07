@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.booking{
+    background-color: #1b2129;
+    color: white;
+}
+.booking h1{
+    text-align: center;
+    padding: 5% 0;
+    text-decoration: underline;
+}
+.booking-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    margin-left: 13%;
+}
+.book{
+    width: 450px;
+    padding: 20px;
+}
+.book-header{
+    display: flex;
+    align-items: center;
+    padding-bottom: 3%;
+    gap: 10px;
+}
+.book-header h3{
+    font-size: larger;
+}
+.book img{
+    width: 10%;
+}
+.book button{
+    padding: 7px 15px;
+    background-color: #a1f65e;
+    color: #1b2129;
+    border: none;
+    margin-top: 2%;
+    border-radius: 5px;
+}
+.book button:hover{
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #a1f65e;
+    color: white;
+}

@@ -1,0 +1,7 @@
+POST https://gym-service-ejuu.onrender.com/api/login
+Content-Type: application/json
+
+{
+    "email": "doninca34@gmail.com",
+    "password": "Abeskiafrica"
+}
