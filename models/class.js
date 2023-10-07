@@ -21,7 +21,7 @@ const classSchema = new mongoose.Schema({
       message: 'Invalid phone number format',
     },
   },
-  leve: {
+  level: {
     type: String,
     required: true,
     enum: ['Beginner', 'Intermediate', 'Advanced']

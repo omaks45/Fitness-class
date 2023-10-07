@@ -1,5 +1,5 @@
 const express = require("express")
-const {signup, signin, signout, contacts, sendClassReminders, resetPassword } = require("../controller/user")
+const {signup, signin, signout, contacts, bookClass, authenticateUser, resetPassword } = require("../controller/user")
 const {check} = require('express-validator')
 const router = express.Router()
 
@@ -23,7 +23,6 @@ router.get("/signout", signout)
 router.post('/forgot-password', resetPassword)
 router.post('/contact', contacts)
 
-console.log('sendClassReminders started')
-router.post('/BookForm', sendClassReminders)
+router.post('/BookForm', authenticateUser, bookClass)
 
 module.exports = router

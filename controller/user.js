@@ -1,4 +1,3 @@
-const user = require('../models/user');
 const User = require('../models/user')
 const Contact = require('../models/contacts')
 const Class = require('../models/class')
@@ -39,6 +38,23 @@ const signup = async (req, res) => {
   }
 };
 
+//authenticate a user
+function authenticateUser(req, res, next) {
+  const token = req.header('Authorization'); // Assuming the token is passed in the 'Authorization' header
+
+  if (!token) {
+    return res.status(401).json({ message: 'Unauthorized' });
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.SECRET_KEY); // Verify the token using your secret key
+    req.user = { _id: decoded._id }; // Set the user on the request
+    next();
+  } catch (error) {
+    console.error(error);
+    res.status(401).json({ message: 'Token is not valid' });
+  }
+}
 
 
 //signin function
@@ -159,10 +175,118 @@ const contacts = async (req, res) => {
       error: 'Internal server error'
     })
   }
+};
+
+
+// Define the "Book Class" function
+/*
+const bookClass = async (req, res) => {
+  try {
+    // Extract user ID from the request object
+    const userId = req.user._id; 
+
+    // Validate the data inputted by the user
+    const { classType, status, phone, level } = req.body;
+    console.log('bookClass started')
+
+    // Create a new class instance
+    const newClass = new Class({
+      classType,
+      status,
+      phone,
+      level,
+      user: userId, // Associate the class with the logged-in user
+    });
+
+    // Save the class data to the database
+    const savedClass = await newClass.save();
+
+    // Send a success response
+    res.status(201).json({ message: 'Class registration successful', data: savedClass });
+
+    // After saving the class, schedule an email reminder
+    sendClassReminders();
+  } catch (err) {
+    // Handle any errors that occur during class registration
+    console.error(err); // Log the error for debugging purposes
+    res.status(500).json({ err: 'An error occurred during class registration' });
+  }
+};
+*/
+
+const bookClass = async (req, res) => {
+  try {
+    // Extract user ID from the request object
+    const userId = req.user._id; 
+
+    // Validate the data inputted by the user
+    const { classType, status, phone, level } = req.body;
+
+    // Perform manual validation checks
+    if (!isValidClassType(classType)) {
+      return res.status(400).json({ message: 'Invalid class type' });
+    }
+
+    if (!isValidStatus(status)) {
+      return res.status(400).json({ message: 'Invalid status' });
+    }
+
+    if (!isValidPhone(phone)) {
+      return res.status(400).json({ message: 'Invalid phone number format' });
+    }
+
+    if (!isValidLevel(level)) {
+      return res.status(400).json({ message: 'Invalid level' });
+    }
+
+    // Create a new class instance
+    const newClass = new Class({
+      classType,
+      status,
+      phone,
+      level,
+      user: userId, // Associate the class with the logged-in user
+    });
+
+    // Save the class data to the database
+    const savedClass = await newClass.save();
+
+    // Send a success response
+    res.status(201).json({ message: 'Class registration successful', data: savedClass });
+
+    // After saving the class, schedule an email reminder
+    sendClassReminders();
+  } catch (err) {
+    // Handle any errors that occur during class registration
+    console.error(err); // Log the error for debugging purposes
+    res.status(500).json({ err: 'An error occurred during class registration' });
+  }
+};
+
+// Custom validation functions
+function isValidClassType(classType) {
+  const validClassTypes = ['YOGA', 'CHISEL_IT', 'ACTION_SPORTS', 'THE_RIDE', 'CARDIO_DANCE', 'ADVANCED_HIIT'];
+  return validClassTypes.includes(classType);
 }
 
-//scheduled function
+function isValidStatus(status) {
+  const validStatuses = ['scheduled', 'completed', 'canceled'];
+  return validStatuses.includes(status);
+}
 
+function isValidPhone(phone) {
+  // Implement your phone number validation logic here (e.g., regex)
+  const phoneRegex = /^[0-9]{10}$/;
+  return phoneRegex.test(phone);
+}
+
+function isValidLevel(level) {
+  const validLevels = ['Beginner', 'Intermediate', 'Advanced'];
+  return validLevels.includes(level);
+}
+
+
+//scheduled function
 // Function to send email reminders
 async function sendClassReminders() {
   try {
@@ -230,4 +354,5 @@ cron.schedule('0 9 * * 1-6', () => {
   console.log('Scheduled task executed.');
 });
 
-module.exports = { signup, signin, resetPassword, signout, contacts, sendClassReminders}
+
+module.exports = { signup, signin, resetPassword, signout, contacts, bookClass, authenticateUser}
