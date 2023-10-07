@@ -28,8 +28,6 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.use(cors())
-
 // Import the routes
 const userRoutes = require("./routes/user")
 
