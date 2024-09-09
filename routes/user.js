@@ -1,6 +1,7 @@
-const express = require("express")
-const {signup, signin, signout, contacts, bookClass, authenticateUser, resetPassword } = require("../controller/user")
-const {check} = require('express-validator')
+import express from  'express'
+import {signup, signin, signout, contacts, bookClass, authenticateUser, resetPassword } from  '../controller/user.js'
+import {check} from 'express-validator'
+
 const router = express.Router()
 
 
@@ -25,4 +26,4 @@ router.post('/contact', contacts)
 
 router.post('/BookForm', authenticateUser, bookClass)
 
-module.exports = router
+export default router

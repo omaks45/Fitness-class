@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 // Define the schema for the password reset collection
 const passwordResetSchema = new mongoose.Schema({
@@ -21,6 +21,5 @@ const passwordResetSchema = new mongoose.Schema({
 });
 
 // Create a model for the password reset collection
-const PasswordReset = mongoose.model('PasswordReset', passwordResetSchema);
+export default mongoose.model('PasswordReset', passwordResetSchema);
 
-module.exports = PasswordReset;

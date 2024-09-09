@@ -1,21 +1,16 @@
-const mongoose = require("mongoose")
-const express = require("express")
+import mongoose from "mongoose"
+import express from "express"
+import { connectToDatabase } from "./config/db.js"
+
 const app = express()
 
-const bodyParser = require("body-parser")
-const cookieParser = require("cookie-parser")
-const cors = require("cors")
-require("dotenv").config();
+import bodyParser from "body-parser"
+import cookieParser from "cookie-parser"
+import cors from "cors"
+import "dotenv/config";
 
 // DB Connection
-mongoose.connect(process.env.MONGO_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => {
-  console.log("DB CONNECTED")
-}).catch(() => {
-  console.log("UNABLE to connect to DB")
-})
+connectToDatabase()
 
 // Use parsing middleware
 app.use(bodyParser.json())
@@ -23,7 +18,7 @@ app.use(cookieParser())
 app.use(cors());
 
 // Import the routes
-const userRoutes = require("./routes/user")
+import userRoutes from "./routes/user.js"
 
 // Using routes
 app.use('/api', userRoutes) 

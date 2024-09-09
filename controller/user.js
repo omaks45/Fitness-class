@@ -1,16 +1,16 @@
-const User = require('../models/user')
-const Contact = require('../models/contacts')
-const Class = require('../models/class')
-const PasswordReset = require('../models/reset_password')
-const {validationResult} = require('express-validator')
-const jwt = require('jsonwebtoken')
-const expressJwt = require('express-jwt')
-const cron = require('node-cron')
-const nodemailer = require('nodemailer')
+import User from '../models/user.js'
+import Contact from'../models/contacts.js'
+import Class from '../models/class.js'
+import PasswordReset from '../models/reset_password.js'
+import {validationResult} from 'express-validator'
+import jwt from 'jsonwebtoken'
+import expressJwt from'express-jwt'
+import cron from 'node-cron'
+import nodemailer from 'nodemailer'
 
 
 //signup function
-const signup = async (req, res) => {
+export const signup = async (req, res) => {
   try {
     console.log('signup started')
     // Validate the data inputted by the user
@@ -39,7 +39,7 @@ const signup = async (req, res) => {
 };
 
 //authenticate a user
-function authenticateUser(req, res, next) {
+export function authenticateUser(req, res, next) {
   const token = req.header('Authorization'); // Assuming the token is passed in the 'Authorization' header
 
   if (!token) {
@@ -59,7 +59,7 @@ function authenticateUser(req, res, next) {
 
 //signin function
 
-const signin = (req, res) => {
+export const signin = (req, res) => {
 
   const {email, password} = req.body;
   console.log('signin started', email, password)
@@ -103,7 +103,7 @@ const signin = (req, res) => {
 
 //reset password function
 
-const resetPassword = async function (email, token, newPassword) {
+export const resetPassword = async function (email, token, newPassword) {
   try {
     const resetRecord = await this.findOne({
       email,
@@ -140,7 +140,7 @@ const resetPassword = async function (email, token, newPassword) {
 
 //signout page function
 
-const signout = async (req, res) => {
+export const signout = async (req, res) => {
   try {
     // Clear the token cookie
     res.clearCookie('token');
@@ -159,7 +159,7 @@ const signout = async (req, res) => {
 
 
 //contact page functions
-const contacts = async (req, res) => {
+export const contacts = async (req, res) => {
   try {
     const user = new Contact(req.body);
     console.log('contacts started')
@@ -214,7 +214,7 @@ const bookClass = async (req, res) => {
 };
 */
 
-const bookClass = async (req, res) => {
+export const bookClass = async (req, res) => {
   try {
     // Extract user ID from the request object
     const userId = req.user._id; 
@@ -288,7 +288,7 @@ function isValidLevel(level) {
 
 //scheduled function
 // Function to send email reminders
-async function sendClassReminders() {
+export async function sendClassReminders() {
   try {
     // Configure nodemailer for sending emails
     const transporter = nodemailer.createTransport({
@@ -355,4 +355,4 @@ cron.schedule('0 9 * * 1-6', () => {
 });
 
 
-module.exports = { signup, signin, resetPassword, signout, contacts, bookClass, authenticateUser}
+//module.exports = { signup, signin, resetPassword, signout, contacts, bookClass, authenticateUser}
